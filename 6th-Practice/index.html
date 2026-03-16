@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6th-Practice</title>
+</head>
+<body>
+
+    <!-- Celsius To Fahrenheit  Converter -->
+
+    <h1>Convert celsius to fahrenheit :</h1>
+
+    <div>
+        <form onsubmit="getFahren(); return false;" >
+           <label for="cel">Enter a celsius :</label>
+           <input type="number" name="cel" id="celsius">
+           <button type="submit">Convert</button>
+        </form><br><hr>
+
+        <!--      Fahrenheit Result     -->
+
+           <label for="result1"><h3>Result : </label>
+           <input type="text" name="result1" id="result1" readonly>
+    </div><hr>
+
+    <!-- Fahrenheit  To  Celsius  Converter -->
+    
+    <h1>Convert fahrenheit to celsius :</h1>
+
+    <div>
+        <form onsubmit="getCelcius(); return false;" >
+           <label for="fahren">Enter a fahrenheit :</label>
+           <input type="number" name="fahren" id="fahrenheit">
+           <button type="submit">Convert</button>
+        </form><br><hr>
+
+     <!--      Celcius Result     -->
+
+           <label for="result2"><h3>Result :</label>
+           <input type="text" name="result2" id="result2" readonly>
+    </div><hr>
+
+    
+    <script>
+
+        //              Fahrenheit  Calculation
+
+        function getFahren() {
+            let userName = String(prompt('Enter your name'));
+              console.log(userName);
+            let celsius = Number(document.getElementById('celsius').value);
+              console.log(celsius +'°C');
+            let fahrenheit = Number(celsius * 9/5 + 32);
+              console.log(fahrenheit +'°F');
+            document.getElementById('result1').value = `${fahrenheit}°F`;
+              console.log(document.getElementById('result1').value)
+        }
+
+
+        //              Celcius  Calculation
+
+         function getCelcius() {
+            let userName = String(prompt('Enter your name'));
+              console.log(userName);
+            let fahrenheit = Number(document.getElementById('fahrenheit').value);
+              console.log(fahrenheit +'°F');
+            let celsius = Number((fahrenheit - 32) * 5/9 );
+              console.log(celsius +'°C');
+            document.getElementById('result2').value = `${celsius}°C`;
+              console.log(document.getElementById('result2').value);
+        }
+
+
+    </script>
+</body>
+</html>
